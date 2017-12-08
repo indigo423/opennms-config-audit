@@ -13,54 +13,55 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <opennmsVersion>1.12.6</opennmsVersion>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <java.version>1.8</java.version>
+
+        <opennms.version>1.12.6</opennms.version>
+        <guava.version>23.0</guava.version>
+        <ch.qos.logback.version>1.2.3</ch.qos.logback.version>
+        <slf4j-api.version>1.7.25</slf4j-api.version>
+        <junit.version>4.12</junit.version>
+        <jxl.version>2.6.12</jxl.version>
+        <maven.compiler.version>3.7.0</maven.compiler.version>
     </properties>
 
     <dependencies>
-
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-api</artifactId>
-            <version>1.7.7</version>
+            <version>${slf4j-api.version}</version>
         </dependency>
-
         <dependency>
             <groupId>ch.qos.logback</groupId>
             <artifactId>logback-classic</artifactId>
-            <version>1.1.2</version>
+            <version>${ch.qos.logback.version}</version>
         </dependency>
-
         <dependency>
             <groupId>com.google.guava</groupId>
             <artifactId>guava</artifactId>
-            <version>17.0</version>
+            <version>${guava.version}</version>
         </dependency>
-
         <dependency>
             <groupId>net.sourceforge.jexcelapi</groupId>
             <artifactId>jxl</artifactId>
-            <version>2.6.12</version>
+            <version>${jxl.version}</version>
         </dependency>
-
         <dependency>
             <groupId>org.opennms</groupId>
             <artifactId>opennms-provision-persistence</artifactId>
-            <version>${opennmsVersion}</version>
+            <version>${opennms.version}</version>
         </dependency>
-
         <dependency>
             <groupId>org.opennms</groupId>
             <artifactId>opennms-config-model</artifactId>
-            <version>${opennmsVersion}</version>
+            <version>${opennms.version}</version>
         </dependency>
-
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
-            <version>4.11</version>
+            <version>${junit.version}</version>
             <scope>test</scope>
         </dependency>
-        
     </dependencies>
 
     <build>
@@ -68,10 +69,10 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>2.5.1</version>
+                <version>${maven.compiler.version}</version>
                 <configuration>
-                    <source>1.7</source>
-                    <target>1.7</target>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
                 </configuration>
             </plugin>
             <plugin>
